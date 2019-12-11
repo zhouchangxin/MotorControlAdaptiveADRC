@@ -303,9 +303,10 @@ void HAL_SYSTICK_Callback(void)
 		}
 		else
 		{
-			//RotateSpeed = (float)200 * CaptureNumber / 448 / 30;//转速
+			RotateSpeed = (float)200 * CaptureNumber / 448 / 30;//转速
 			L298N_DCMOTOR_Contrl(1,1,PWM_Duty);
-			printf("%f,%d\r\n", tempNum * 0.005, CaptureNumber);
+			//printf("%f,%d\r\n", tempNum * 0.005, CaptureNumber);
+			printf("%f,%0.41f\r\n", tempNum * 0.005, RotateSpeed);
 			tempNum++;
 			
 		}
